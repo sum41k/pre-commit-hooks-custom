@@ -1,0 +1,7 @@
+- id: hadolint
+  name: Dockerfile hadolint
+  description: Dockerfile hadolint
+  entry: pre_commit_hooks/hadolint.sh
+  language: script
+  files: Dockerfile
+
