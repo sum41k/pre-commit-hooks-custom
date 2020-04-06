@@ -1,13 +1,9 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-set -o errexit
-set -o pipefail
-set -o nounset
-
-if ! which hadolint &>/dev/null; then
-    >&2 echo "Hadolint must be installed" 
+if which hadolint &> /dev/null $? != 0 ; then
+    echo "Hadolint must be installed"
     exit 1
 fi
 
 hadolint "$@"
-
+exit $?
