@@ -23,3 +23,20 @@
   files: (\.tf)$
   exclude: \.terraform\/.*$
 
+- id: terraform_fmt
+  name: Terraform fmt
+  description: Rewrites all Terraform configuration files to a canonical format.
+  entry: pre_commit_hooks/terraform_fmt.sh
+  language: script
+  files: (\.tf|\.tfvars)$
+  exclude: \.terraform\/.*$
+
+- id: terraform_validate
+  name: Terraform validate without variables
+  description: Validates all Terraform configuration files.
+  entry: pre_commit_hooks/terraform_validate.sh
+  language: script
+  files: (\.tf|\.tfvars)$
+  exclude: \.terraform\/.*$
+
+
