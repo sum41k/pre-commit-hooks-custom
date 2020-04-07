@@ -5,3 +5,11 @@
   language: script
   files: Dockerfile
 
+- id: terraform_tflint
+  name: Terraform validate with tflint
+  description: Validates all Terraform configuration files with TFLint.
+  entry: pre_commit_hooks/terraform_tflint.sh
+  language: script
+  files: (\.tf|\.tfvars)$
+  exclude: \.terraform\/.*$
+
